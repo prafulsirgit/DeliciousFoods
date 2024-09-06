@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan Gyan Sarthi</title>
+    <style>
+        /* Colors */
+        :root {
+            --desert-sand-beige: #F2E5D5;
+            --deep-maroon: #922B21;
+            --jodhpur-blue: #3B5998;
+            --mustard-yellow: #FFD74F;
+            --ivory-white: #FDF6E3;
+            --copper-orange: #D97D54;
+            --matte-charcoal-black: #2A2A2A;
+        }
+
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        body {
+            background-color: var(--desert-sand-beige);
+            color: var(--deep-maroon);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(59, 89, 152, 0.9);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--ivory-white);
+        }
+
+        header .logo {
+            font-family: 'Poppins', serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--ivory-white);
+            font-weight: bold;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+
+        .chat-container {
+            background-color: var(--desert-sand-beige);
+            border: 2px solid var(--deep-maroon);
+            border-radius: 15px;
+            width: 60%;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container h1 {
+            font-family: 'Poppins', serif;
+            color: var(--deep-maroon);
+        }
+
+        .chat-box {
+            background-color: var(--ivory-white);
+            padding: 15px;
+            border-radius: 10px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .chat-bubble {
+            max-width: 70%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .user-msg {
+            background-color: var(--mustard-yellow);
+            align-self: flex-end;
+        }
+
+        .bot-msg {
+            background-color: var(--deep-maroon);
+            color: var(--ivory-white);
+        }
+
+        .chat-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-input input {
+            width: 85%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid var(--copper-orange);
+            background-color: var(--ivory-white);
+            color: var(--matte-charcoal-black);
+        }
+
+        .chat-input button {
+            background-color: var(--copper-orange);
+            color: var(--ivory-white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--deep-maroon);
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin: 20px 0;
+            color: var(--ivory-white);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--ivory-white);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: var(--deep-maroon);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background-color: var(--matte-charcoal-black);
+            color: var(--ivory-white);
+        }
+
+        body.dark-mode .chat-container {
+            background-color: var(--matte-charcoal-black);
+            border-color: var(--mustard-yellow);
+        }
+
+        body.dark-mode .chat-input input {
+            background-color: var(--matte-charcoal-black);
+            color: var(--ivory-white);
+        }
+
+        body.dark-mode footer {
+            background-color: var(--matte-charcoal-black);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Rajasthan Gyan Sarthi</div>
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Contact Support</a>
+    </nav>
+</header>
+
+<div class="main">
+    <div class="chat-container">
+        <h1>Welcome to Rajasthan Gyan Sarthi</h1>
+        <div class="chat-box">
+            <div class="chat-bubble user-msg">
+                How does the AI chatbot work?
+            </div>
+            <div class="chat-bubble bot-msg">
+                The AI chatbot helps answer your academic questions and provides study material to guide you.
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="Ask your question here...">
+            <button>&#128395;</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms & Conditions</a> |
+    <a href="#">Feedback</a>
+</footer>
+
+<script>
+    // Optional dark mode toggle
+    const toggleDarkMode = () => {
+        document.body.classList.toggle('dark-mode');
+    };
+</script>
+
+</body>
+</html>
