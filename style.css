@@ -1,0 +1,570 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Allows the content to stack vertically */
+    background-color: rgb(244, 16, 0);
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('media/bg.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    /* Reduced opacity */
+    z-index: 0;
+}
+
+.main {
+    position: relative;
+    z-index: 1;
+    /* Keeps content above the background */
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 2rem;
+    flex-direction: column;
+}
+
+.main>h1 {
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: 0; */
+    font-style: normal;
+}
+
+.btns {
+    display: block;
+    padding: 10px;
+}
+
+#links {
+    text-decoration: none;
+    color: inherit;
+    /* Inherit the color from the button */
+}
+
+button {
+    margin: 10px;
+    /* Adds space between buttons */
+    padding: 10px 30px;
+    background-color: #ff6347;
+    /* Tomato background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffe100;
+}
+
+footer {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* page-2.html */
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styling */
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: 0; */
+    font-style: normal;
+}
+
+.logo a:hover {
+    color: #c0392b;
+    /* Highlight color */
+}
+
+/* Navigation Bar */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-top: 16px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #c0392b;
+    border-bottom: 2px solid #c0392b;
+}
+
+/* CTA Button */
+.header-cta .btn-order-now {
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.header-cta .btn-order-now:hover {
+    background-color: #c0392b;
+}
+
+/* Mobile Menu Icon */
+.menu-toggle {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Styles for mobile menu when active */
+    .menu-toggle.active+.nav-menu ul {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+        padding: 10px 20px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* Full viewport height */
+    background: url('media/hero-image.png') no-repeat center center/cover;
+    /* Fullscreen background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    /* overflow: hidden; */
+    /* border: 2px solid red;    */
+    padding-bottom: 34%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Transparent overlay */
+}
+
+.container-hero {
+    position: relative;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Hero Content */
+.hero-content {
+    margin-top: 15%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    /* Adds depth to text */
+    animation: fadeInDown 1s ease-in-out;
+    /* Animation */
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.2s ease-in-out;
+    /* Animation */
+}
+
+/* CTA Button */
+.btn-cta {
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1.4s ease-in-out;
+}
+
+.btn-cta:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    /* Small grow effect on hover */
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn-cta {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+
+/* Menu Section: (10 Dishes with Prices) */
+
+/* Menu Section */
+.menu-section {
+    padding: 60px 20px;
+    background-color: #fdfdfd;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Menu Grid Layout */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Menu Item */
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.menu-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-item-image {
+    transform: scale(1.05);
+}
+
+/* Item Title */
+.menu-item-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: #c0392b;
+}
+
+/* Item Description */
+.menu-item-desc {
+    font-size: 16px;
+    color: #666;
+    margin: 0 20px 20px;
+    line-height: 1.5;
+}
+
+/* Price Styling */
+.menu-item-price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-heading {
+        font-size: 28px;
+    }
+
+    .menu-item-desc {
+        font-size: 14px;
+    }
+
+    .menu-item-title {
+        font-size: 20px;
+    }
+
+    .menu-item-price {
+        font-size: 16px;
+    }
+}
+
+/* footer css */
+/* Footer Section */
+.footer-section {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Footer About Section */
+.footer-about {
+    line-height: 1.8;
+}
+
+.footer-about p {
+    margin-top: 10px;
+    color: #bdc3c7;
+}
+
+.footer-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ecf0f1;
+}
+
+/* Social Media Icons */
+.footer-social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social-icons li a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons li a:hover {
+    color: #e74c3c;
+}
+
+/* Quick Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link-list li a {
+    text-decoration: none;
+    color: #bdc3c7;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-link-list li a:hover {
+    color: #e74c3c;
+}
+
+/* Subscription Form */
+.footer-subscribe-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-subscribe-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-btn-subscribe {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-btn-subscribe:hover {
+    background-color: #c0392b;
+}
+
+.footer-subscribe p {
+    color: #bdc3c7;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a252f;
+    color: #bdc3c7;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+
